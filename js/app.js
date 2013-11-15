@@ -15,15 +15,17 @@ function HomeController($scope, $location) {
 }
 
 function RoomController($scope, $routeParams) {
+  $scope.url = window.location.href;
+
   $scope.init = function() {
     var webrtc = new SimpleWebRTC({
-        localVideoEl: 'local',
-        remoteVideosEl: 'remote',
-        autoRequestMedia: true
+      localVideoEl: 'local',
+      remoteVideosEl: 'remote',
+      autoRequestMedia: true
     });
 
     webrtc.on('readyToCall', function () {
-        webrtc.joinRoom($routeParams.slug);
+      webrtc.joinRoom($routeParams.slug);
     });
   }
 }
