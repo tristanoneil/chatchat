@@ -1,0 +1,10 @@
+#local {
+  position: relative;
+  width: 100%;
+}
+
+#remote video {
+  position: relative;
+  width: 24%;
+  border: solid 5px #000;
+}
